@@ -29,6 +29,14 @@ Things you may want to cover:
 |------|----|-------|
 |email|string|null: false|
 |password|string|null: false|
+### Association
+- has_many :groups
+- has_many :messages
+
+## groupsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
 
 ## groups_usersテーブル
 
