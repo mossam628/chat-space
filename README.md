@@ -27,6 +27,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
+|username|text|null: false|
 |email|string|null: false|
 |password|string|null: false|
 ### Association
