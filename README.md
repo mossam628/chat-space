@@ -23,6 +23,13 @@ Things you may want to cover:
 
 * ...
 
+## usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false|
+|password|string|null: false|
+
 ## groups_usersテーブル
 
 |Column|Type|Options|
