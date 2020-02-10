@@ -1,16 +1,15 @@
 .chat-main
   .chat-main__group-info
-    .main-header
-      .main-header__leftbox
-        .main-header__leftbox__group{"data-group_id" => "17836"}
-          aaaaa
-        %ul.main-header__leftbox__group-member
+    .chat-main__group-info__box
+      .chat-main__group-info__box__group{"data-group_id" => "17836"}
+        aaaaa
+        %ul.chat-main__group-info__box__group-member
           Member:
-          %li.main-header__leftbox__group-member__list
+          %li.chat-main__group-info__box__group-member__list
             momomomo
-          %li.main-header__leftbox__group-member__list
+          %li.chat-main__group-info__box__group-member__list
             aaa
-        = link_to "#", class:"edit" do
-          .main-header__edit-btn
+    = link_to "#", class:"chat-main__group-info__edit-btn" do
+      Edit
   .chat-main__message-list
   .chat-main__message-form
