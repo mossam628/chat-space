@@ -48,29 +48,27 @@
     height: calc(100% - 100px);
     background-color: #2f3e51;
     padding:20px 20px 0;
-    .group-page {
-      text-decoration: none;
-      color: #ffffff;
-      &__box {
-      height: 35px;
+    &__box {
+      height: 31px;
       width: 260px;
       margin-bottom: 40px;
       font-weight: bold;
       color: #ffffff;
       box-sizing: border-box;
       display: block;
-        &__name {
+      &__name {
         font-size: 15px;
         height: 20px;
-        line-height: 15px;
-        padding-bottom: 5px;
-        }
-        &__message {
+        line-height: 20px;
+        margin-bottom: 5px;
+        text-decoration: none;
+        color: #ffffff;
+      }
+      &__message {
         font-size: 11px;
         height: 11px;
         line-height: 11px;
-        }  
-      }
+      }  
     }
   }
 }

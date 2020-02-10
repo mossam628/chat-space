@@ -11,10 +11,9 @@
         =link_to"#",class:"setting"do
           =icon('fas','cog')
   .side-bar__group-list
-    = link_to "#" , class: "group-page" do
-      .side-bar__group-list__box
-        %p.side-bar__group-list__name
-          グループ名
-        %p.side-bar__group-list__message
-          message
-        
+    .side-bar__group-list__box
+      %p 
+      = link_to "#" , class: "side-bar__group-list__box__name" do
+        グループ名
+      %p.side-bar__group-list__box__message
+        message
