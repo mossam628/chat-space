@@ -22,3 +22,9 @@
         おはよう
   .chat-main__message-form
     %form.chat-main__message-form__new
+      .chat-main__message-form__new__box
+        %input{type:"text",class:"input-box__text",placeholder:"Type a message"}
+        %label{class:"input-box__image"}
+          =icon('far','image')
+          %input{type:"file",class: "input-box__image__file"}
+      %input{type:"submit",class:"input-box__submit",value:"Send"}
