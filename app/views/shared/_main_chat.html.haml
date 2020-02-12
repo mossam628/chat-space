@@ -20,11 +20,21 @@
           2020/02/11(Tue)12:00:00
       .chat-main__message-list__index__text
         おはよう
+    
   .chat-main__message-form
-    %form.chat-main__message-form__new
+    = form_for [@group, @message] do |f|
       .chat-main__message-form__new__box
-        %input{type:"text",class:"input-box__text",placeholder:"Type a message"}
-        %label{class:"input-box__image"}
-          =icon('far','image')
-          %input{type:"file",class: "input-box__image__file"}
-      %input{type:"submit",class:"input-box__submit",value:"Send"}
+        = f.text_field :content, class: 'input-box__text', placeholder: 'Type a message'
+        = f.label :image, class: 'input-box__image' do
+          = icon('far', 'image', class: 'icon')
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'input-box__submit'
+    -# .chat-main__message-form
+    -# %form.chat-main__message-form__new
+    -#   .chat-main__message-form__new__box
+    -#     %input{type:"text",class:"input-box__text",placeholder:"Type a message"}
+    -#     %label{class:"input-box__image"}
+    -#       =icon('far','image')
+    -#       %input{type:"file",class: "input-box__image__file"}
+    -#   %input{type:"submit",class:"input-box__submit",value:"Send"}
+    
