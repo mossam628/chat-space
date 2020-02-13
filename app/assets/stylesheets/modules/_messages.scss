@@ -106,9 +106,11 @@
           line-height: 17px;
           color: #999999;
           display: flex;
+          display: block;
           &__list {
             margin-left: 5px;
             display: flex;
+            display: block;
           }
         } 
       } 
@@ -168,12 +170,12 @@
     position: fixed;
     bottom: 0;
     padding: 20px 40px;
-     &__new {
+    .new_message {
       width: 100%;
       height: 50px;
       display: flex;
       justify-content: space-between;
-      &__box {
+      .chat-main__message-form__new__box {
       height: 50px;
       width: 100%;
       display: flex;

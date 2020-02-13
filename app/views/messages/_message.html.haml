@@ -1,0 +1,22 @@
+.chat-main__message-list__index
+  .chat-main__message-list__index__info
+    .chat-main__message-list__index__info--user
+      = message.user.name
+    .chat-main__message-list__index__info--daytime
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .chat-main__message-list__index__text
+    - if message.content.present?
+      %p.lower-message__content
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
+-# .chat-main__message-list
+-#     .chat-main__message-list__index
+-#       = render @messages
+-#       .chat-main__message-list__index__info
+-#         %p.chat-main__message-list__index__info--user
+-#           aaa
+-#         %p.chat-main__message-list__index__info--daytime
+-#           2020/02/11(Tue)12:00:00
+-#       .chat-main__message-list__index__text
+-#         おはよう

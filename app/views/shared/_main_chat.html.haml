@@ -1,30 +1,32 @@
 .chat-main
   .chat-main__group-info
     .chat-main__group-info__box
-      .chat-main__group-info__box__group{"data-group_id" => "17836"}
-        aaaaa
-        %ul.chat-main__group-info__box__group-member
-          Member:
-          %li.chat-main__group-info__box__group-member__list
-            momomomo
-          %li.chat-main__group-info__box__group-member__list
-            aaa
-    = link_to "#", class:"chat-main__group-info__edit-btn" do
+      .chat-main__group-info__box__group
+        = @group.name
+        %p.chat-main__group-info__box__group-member
+          Member :
+          - @group.group_users.each do |group_user|
+            = group_user.user.name
+    = link_to edit_group_path(@group), class:"chat-main__group-info__edit-btn" do
       Edit
+
   .chat-main__message-list
-    .chat-main__message-list__index
-      .chat-main__message-list__index__info
-        %p.chat-main__message-list__index__info--user
-          aaa
-        %p.chat-main__message-list__index__info--daytime
-          2020/02/11(Tue)12:00:00
-      .chat-main__message-list__index__text
-        おはよう
+    = render @messages
+    
   .chat-main__message-form
-    %form.chat-main__message-form__new
+    = form_for [@group, @message] do |f|
       .chat-main__message-form__new__box
-        %input{type:"text",class:"input-box__text",placeholder:"Type a message"}
-        %label{class:"input-box__image"}
-          =icon('far','image')
-          %input{type:"file",class: "input-box__image__file"}
-      %input{type:"submit",class:"input-box__submit",value:"Send"}
+        = f.text_field :content, class: 'input-box__text', placeholder: 'Type a message'
+        = f.label :image, class: 'input-box__image' do
+          = icon('far', 'image', class: 'icon')
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'input-box__submit'
+    -# .chat-main__message-form
+    -# %form.chat-main__message-form__new
+    -#   .chat-main__message-form__new__box
+    -#     %input{type:"text",class:"input-box__text",placeholder:"Type a message"}
+    -#     %label{class:"input-box__image"}
+    -#       =icon('far','image')
+    -#       %input{type:"file",class: "input-box__image__file"}
+    -#   %input{type:"submit",class:"input-box__submit",value:"Send"}
+    
