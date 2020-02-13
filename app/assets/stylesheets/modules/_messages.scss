@@ -106,9 +106,11 @@
           line-height: 17px;
           color: #999999;
           display: flex;
+          display: block;
           &__list {
             margin-left: 5px;
             display: flex;
+            display: block;
           }
         } 
       } 
