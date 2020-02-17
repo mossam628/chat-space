@@ -4,10 +4,10 @@ $(function(){
      var html =
       `<div class="chat-main__message-list__index" data-message-id=${message.id}>
          <div class="chat-main__message-list__index__info">
-           <div class="hat-main__message-list__index__info--user">
-             ${message.user_name}
+           <div class="chat-main__message-list__index__info--user">
+             ${message.user.name}
            </div>
-           <div class="hat-main__message-list__index__info--daytime">
+           <div class="chat-main__message-list__index__info--daytime">
              ${message.created_at}
            </div>
          </div>
@@ -16,7 +16,7 @@ $(function(){
              ${message.content}
            </p>
          </div>
-         <img src=${message.image} >
+         <img src=${message.image.url} >
        </div>`
      return html;
    } else {
@@ -26,7 +26,7 @@ $(function(){
            <div class="chat-main__message-list__index__info--user">
              ${message.user_name}
            </div>
-           <div class="chat-main__message-list__index__info--daytimee">
+           <div class="chat-main__message-list__index__info--daytime">
              ${message.created_at}
            </div>
          </div>
@@ -53,9 +53,13 @@ $('#new_message').on('submit', function(e){
  })
   .done(function(data){
     var html = buildHTML(data);
-    $('.messages').append(html);      
+    $('.chat-main__message-list').append(html); 
     $('form')[0].reset();
-    $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+    $('.chat-main__message-list').animate({ scrollTop: $('.chat-main__message-list')[0].scrollHeight});
+    $('.input-box__submit').prop('disabled', false);
+  })
+  .fail(function() {
+    alert("メッセージ送信に失敗しました");
   })
 })
 });
