@@ -51,15 +51,11 @@ $(function(){
             </div>
           </div>
           <div class="chat-main__message-list__index__text">
-            <p class="lower-message__content">
-              // ${message.content}
-            </p>
             ${message.image}
           </div>
         </div>`
       };
       return html;
-    // };
 }
 $('#new_message').on('submit', function(e){
  e.preventDefault();
@@ -76,6 +72,8 @@ $('#new_message').on('submit', function(e){
   .done(function(data){
     var html = buildHTML(data);
     $('.chat-main__message-list').append(html); 
+    console.log(data)
+    console.log(html)
     $('form')[0].reset();
     $('.chat-main__message-list').animate({ scrollTop: $('.chat-main__message-list')[0].scrollHeight});
     $('.input-box__submit').prop('disabled', false);
