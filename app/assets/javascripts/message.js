@@ -17,7 +17,7 @@ $(function(){
             <p class="lower-message__content">
               ${message.content}
             </p>
-            ${message.image.url}
+            ${message.image}
           </div>
         </div>`
       } else if (message.content) {
@@ -54,7 +54,7 @@ $(function(){
             <p class="lower-message__content">
               // ${message.content}
             </p>
-            ${message.image.url}
+            ${message.image}
           </div>
         </div>`
       };
