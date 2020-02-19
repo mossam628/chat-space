@@ -136,30 +136,30 @@
     padding: 40px;
     overflow: scroll;
     &__index {
-      height: 64px;
+      // height: 64px;
       padding-bottom: 20px;
       &__info {
-        height: 18px;
+        // height: 18px;
         margin-bottom: 12px;
         display: flex;
         justify-content: left;
         &--user{
           font-size: 16px;
           color: #333333;
-          height: 18px;
-          line-height: 18px;
+          // height: 18px;
+          // line-height: 18px;
         }
         &--daytime {
           font-size: 12px;
           color: #999999;
-          height: 18px;
-          line-height: 18px;
+          // height: 18px;
+          // line-height: 18px;
           margin-left: 5px;
         }
       }
       &__text {
-        height: 14px;
-        line-height: 14px;
+        // height: 14px;
+        // line-height: 14px;
         font-size: 14px;
         color: #434A54;
       }
